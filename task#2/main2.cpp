@@ -13,17 +13,18 @@ int main()
         cout << a[i] << " ";
     }
     cout << "}. Результат = " << sum;
-    for (int i = 0; i < a.size(); ++i)
+    bool answer(false);
+    for (int i = 0; i < a.size() && !(answer); ++i)
     {
         if (a[i] < sum)
         {
-            for (int j = i; j < a.size(); ++j)
+            for (int j = i; j < a.size() && !(answer); ++j)
             {
                 if ((a[i] + a[j]) == sum)
                 {
                     index_start = i;
                     index_end = j;
-                    break;
+                    answer = true;
                 }
             }
         }
