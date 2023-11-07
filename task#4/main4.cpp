@@ -5,18 +5,48 @@ using namespace std;
 
 int main()
 {
-    vector<int> vec = {-100, -50, -5, 1, 10, 15};
+    int positive, negative;
+    vector<int> vec = {-100, -50, -5, 1, 10, 15,101,102};
     for (int i = 0; i < vec.size(); ++i)
     {
-        for (int j = 0; j < vec.size(); ++j)
+        if (vec[i] > 0)
         {
-            if (abs(vec[j]) > abs(vec[j + 1]))
-                swap(vec[j], vec[j + 1]);
+            positive = i;
+            negative = i - 1;
+            break;
         }
     }
-    cout<<"Result:";
-    for(int i = 0; i < vec.size(); ++i)
+    cout << "Result:";
+    while (positive != vec.size() && negative != -1)
     {
-        cout<<" "<<vec[i];
+        if (abs(vec[negative]) > vec[positive])
+        {
+            cout << " " << vec[positive];
+            positive++;
+        }
+        else
+        {
+            cout << " " << vec[negative];
+            negative--;
+        }
     }
+    int g=vec.size()-positive+negative+1;
+    for(int i=0;i<g;i++)
+    {
+        if (vec.size()-positive)
+        {
+            cout << " " << vec[positive];
+            positive++;
+        }
+        if(negative>=0)//||vec.size()-positive==0
+        {
+            cout << " " << vec[negative];
+            negative--;
+        }
+    }
+    // int g=negative + (vec.size()-1 - positive)+1;
+    // for (int i = 0; i < g; ++i)
+    // {
+    //     cout << " " << vec[positive==vec.size()?i:i+positive];
+    // }
 }
