@@ -6,7 +6,7 @@ using namespace std;
 int main()
 {
     int positive, negative;
-    vector<int> vec = {-100, -50, -5, 1, 10, 15,101,102};
+    vector<int> vec = {-100, -50, -5, 1, 10, 15, 101, 102};
     for (int i = 0; i < vec.size(); ++i)
     {
         if (vec[i] > 0)
@@ -30,23 +30,18 @@ int main()
             negative--;
         }
     }
-    int g=vec.size()-positive+negative+1;
-    for(int i=0;i<g;i++)
+    int g = vec.size() - positive + negative + 1;
+    for (int i = 0; i < g; i++)
     {
-        if (vec.size()-positive)
+        if (vec.size() - positive)
         {
             cout << " " << vec[positive];
             positive++;
         }
-        if(negative>=0)//||vec.size()-positive==0
+        if (negative >= 0)
         {
             cout << " " << vec[negative];
             negative--;
         }
     }
-    // int g=negative + (vec.size()-1 - positive)+1;
-    // for (int i = 0; i < g; ++i)
-    // {
-    //     cout << " " << vec[positive==vec.size()?i:i+positive];
-    // }
 }
