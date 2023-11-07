@@ -4,13 +4,18 @@ using namespace std;
 
 int main()
 {
-    vector<int> vect[5];
+    vector<int> vect{1,3,5,7,9};
     int number;
 
     while (number != -2)
     {
         cout << "input: ";
         cin >> number;
+        if (number == -1)
+        {
+            cout << "conclusion: " << vect[4] << endl;
+            number=vect[4];
+        }
         if (vect[4] > number)
         {
             vect[4] = number;
@@ -26,25 +31,6 @@ int main()
                 }
             }
         }
-        if (number == -1)
-        {
-            cout << "conclusion: " << vect[4]<<endl;
-
-            // for (int j = 0; j < vect.size(); j++)
-            // {
-            //     for (int i = 0; i < vect.size() - 1; i++)
-            //     {
-            //         if (vect[i] > vect[i + 1])
-            //             swap(vect[i], vect[i + 1]);
-
-            //     }
-            // }
-            // cout << "conclusion: " << vect[4] << "(in sorted form the array looks like this: {";
-            // for (int i = 0; i < vect.size(); ++i)
-            // {
-            //     cout << vect[i] << " ";
-            // }
-            // cout << "})";
-        }
+        
     }
 }
